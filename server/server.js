@@ -12,14 +12,6 @@ app.use(express.static(process.env.STATIC_DIR));
 
 const sequelize = require('./config/sequelize.config');
 
-sequelize
-  .authenticate()
-  .then(() => {
-    console.log('Connection to the database has been established successfully.');
-  })
-  .catch((error) => {
-    console.error('Unable to connect to the database:', error);
-  });
 
 
 app.listen(port, () => console.log(`Listening on port: ${port}`) );
