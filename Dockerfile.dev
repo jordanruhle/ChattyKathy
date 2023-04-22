@@ -11,6 +11,9 @@ RUN npm install -g nodemon
 COPY client/package*.json ./client/
 COPY server/package*.json ./server/
 
+# Copy .env file
+COPY .env /app
+
 # Install dependencies for both client and server
 RUN cd client && npm install
 RUN cd server && npm install
